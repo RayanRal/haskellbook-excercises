@@ -1,0 +1,70 @@
+name:                ch25
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/githubuser/ch24#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Author name here
+maintainer:          example@example.com
+copyright:           2018 Author name here
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.10
+extra-source-files:  README.md
+
+executable ch25
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -Wall -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                      ,ch25
+                      ,trifecta
+                      ,parsers
+  default-language:    Haskell2010
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Ch25Content
+                      ,Ch25Exercises
+  build-depends:       base >= 4 && < 5
+                      ,hspec
+                      ,QuickCheck
+                      ,containers
+                      ,transformers
+                      ,random
+                      ,trifecta
+                      ,attoparsec
+                      ,parsec
+                      ,parsers
+                      ,aeson
+                      ,scientific
+                      ,dlist
+                      ,bytestring
+                      ,text
+                      ,hspec
+                      ,raw-strings-qq
+                      -- ,validation
+                      ,checkers
+  ghc-options:         -Wall
+  default-language:    Haskell2010
+
+test-suite tests
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                      ,ch25
+                      ,trifecta
+                      ,hspec
+                      ,QuickCheck
+                      ,containers
+                      ,checkers
+                      ,trifecta
+                      ,parsers
+                      ,dlist
+                      ,bytestring
+                      ,text
+                      ,raw-strings-qq
+  ghc-options:         -Wall -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
